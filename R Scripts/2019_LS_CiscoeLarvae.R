@@ -50,7 +50,7 @@ raw.data$Mid.Long.DD<-(raw.data$BEG_LONGITUDE_DD+raw.data$END_LONGITUDE_DD)/2
 
 ##Composite the two nets into one sample
   group_by(OP_DATE, TIME, YEAR,	LOCATION,	Mid.Lat.DD, Mid.Long.DD, DIST_SHORE_M, BEG_DEPTH,
-          END_DEPTH, SURF_TEMP, TOW_TIME, DISTANCE, SPECIES) %>%
+          END_DEPTH, SEABIRD_TEMP, SEABIRD_CHL, SEABIRD_BEAM, TOW_TIME, DISTANCE, SPECIES) %>%
   summarise_at(vars(FISH), sum) %>%
     ungroup() %>%
 
@@ -129,7 +129,6 @@ ggplot(towdata, aes(Mid.Long.DD, Mid.Lat.DD)) +
     facet_wrap(~YEAR) 
 
 ggsave(here('Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png'), dpi = 300, width = 30, height = 16, units = "cm")
-
 
 
 ####################################################################################################################NEARSHORE DATA####
@@ -254,7 +253,7 @@ ggplot(towdata, aes(x=jday, y=log(fish_ha))) +
   plot_theme +
   theme(legend.position=c(0.8, 0.8)) + 
   labs( x='Julian Day', y='Log(Fish per hectare)',
-        title='Lake Superior Larval Ciscoe Distance From Shore',
+        title='Lake Superior Larval Ciscoe Collections by Date',
         subtitle='Collections made May-July for the years 2014-2019',
         caption=ann_data_access)
 
@@ -293,3 +292,88 @@ ggplot(data, aes(x=jday, y=log(fish_ha))) +
         caption=ann_data_access)
 
 ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Density_Date.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+
+#####################################################################################################
+##Fish density as a function of water temperature
+###ALL YEARS
+
+my_breaks = c(1, 100, 1000, 25000, 75000)
+
+ggplot(towdata, aes(x=SEABIRD_TEMP, y=log(fish_ha))) +
+  geom_point(data=towdata, mapping=aes(x=SEABIRD_TEMP, y=log(fish_ha), color=YEAR), size=4, stroke=1.5)+
+  geom_smooth(data=towdata, mapping=aes(x=SEABIRD_TEMP, y=log(fish_ha), color=YEAR), size=1, stroke=1.5) +
+  scale_color_gradient(low='cadetblue2', high='red', name='Year')+
+  scale_y_continuous()+
+  scale_x_continuous()+
+  plot_theme +
+  theme(legend.position=c(0.8, 0.8)) + 
+  labs( x='Surface water temperature (C)', y='Log(Fish per hectare)',
+        title='Lake Superior Larval Ciscoe in Relation to Water Temperatures',
+        subtitle='Collections made May-July for the years 2014-2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/LS_CiscoeLarvae_Density_Temperature.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+#####################################################################################################
+##Fish density as a function of water temperature
+###2019
+
+my_breaks = c(1, 100, 1000, 25000, 75000)
+
+ggplot(data, aes(x=SEABIRD_TEMP, y=log(fish_ha))) +
+  geom_point(size=4, stroke=1.5)+
+  geom_smooth(size=1, stroke=1.5) +
+  scale_y_continuous()+
+  scale_x_continuous()+
+  plot_theme +
+  theme(legend.position=c(0.8, 0.8)) + 
+  labs( x='Surface water temperature (C)', y='Log(Fish per hectare)',
+        title='Lake Superior Larval Ciscoe in Relation to Water Temperatures',
+        subtitle='Collections made May-July 2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Density_Temperature.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+
+#####################################################################################################
+##Fish density as a function of Chl a
+###ALL YEARS
+
+my_breaks = c(1, 100, 1000, 25000, 75000)
+
+ggplot(towdata, aes(x=SEABIRD_TEMP, y=log(fish_ha))) +
+  geom_point(data=towdata, mapping=aes(x=SEABIRD_CHL, y=log(fish_ha), color=YEAR), size=4, stroke=1.5)+
+  geom_smooth(data=towdata, mapping=aes(x=SEABIRD_CHL, y=log(fish_ha), color=YEAR), size=1, stroke=1.5) +
+  scale_color_gradient(low='cadetblue2', high='red', name='Year')+
+  scale_y_continuous()+
+  scale_x_continuous()+
+  plot_theme +
+  theme(legend.position=c(0.8, 0.8)) + 
+  labs( x='Surface water Chl a concentration', y='Log(Fish per hectare)',
+        title='Lake Superior Larval Ciscoe in Relation to Chlorophyll a Concentration',
+        subtitle='Collections made May-July for the years 2014-2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/LS_CiscoeLarvae_Density_Chla.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+#####################################################################################################
+##Fish density as a function of Beam Transmission
+###ALL YEARS
+
+my_breaks = c(1, 100, 1000, 25000, 75000)
+
+ggplot(towdata, aes(x=SEABIRD_TEMP, y=log(fish_ha))) +
+  geom_point(data=towdata, mapping=aes(x=SEABIRD_BEAM, y=log(fish_ha), color=YEAR), size=4, stroke=1.5)+
+  geom_smooth(data=towdata, mapping=aes(x=SEABIRD_BEAM, y=log(fish_ha), color=YEAR), size=1, stroke=1.5) +
+  scale_color_gradient(low='cadetblue2', high='red', name='Year')+
+  scale_y_continuous()+
+  scale_x_continuous()+
+  plot_theme +
+  theme(legend.position=c(0.8, 0.8)) + 
+  labs( x='Surface water transparency, 0-100', y='Log(Fish per hectare)',
+        title='Lake Superior Larval Ciscoe in Relation to Water Transparency',
+        subtitle='Collections made May-July for the years 2014-2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/LS_CiscoeLarvae_Density_Beam.png'), dpi = 300, width = 30, height = 16, units = "cm")
