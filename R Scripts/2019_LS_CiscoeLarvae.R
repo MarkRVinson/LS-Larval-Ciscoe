@@ -21,6 +21,8 @@ library(magick)
 library(grid)
 library(ggforce)
 library(here)
+library(ggpubr)
+library(ggtern)
 
 ##load the raw RVCAT data file
 ##NOTE: this code is designed to process the ENTIRE RVCAT output, you can subset out target codes, species, years, etc later
@@ -217,6 +219,57 @@ ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Density.png'), dpi = 300, wid
 
 
 #####################################################################################################
+##map with stations color coded by Chla
+ls_poly <- readOGR(dsn = here('Data',"shapefiles/LakeSuperior"), layer = "lake_superior")
+ls_poly <- spTransform(ls_poly, CRS("+proj=longlat"))
+ls_poly.fort <- fortify(ls_poly)
+
+##my_breaks = c(1, 10, 100, 1000, 10000)
+
+ggplot(data, aes(Mid.Long.DD, Mid.Lat.DD)) +
+  theme_bw() +
+  scale_y_continuous()+
+  scale_x_continuous(breaks=c(-93,-92,-91,-90,-89,-88,-87,-86,-85,-84), 
+                     labels=c('-93','-92','-91','-90','-89','-88','-87','-86','-85','-84'))+
+  geom_path(data = ls_poly.fort, aes(long, lat, group = group), size = 0.5)+
+  geom_point(data=data, mapping=aes(Mid.Long.DD, Mid.Lat.DD, color=SEABIRD_CHL), size=4, stroke=1.5)+
+  scale_color_gradient(low='cadetblue2', high='red', name='Chl a')+
+  map_theme+
+  ##geom_text(aes(label=Station))+
+  labs( x='Longitude', y='Latitude',
+        title='Lake Superior Surface Chlorophyll a concentration',
+        subtitle='Collections made May-July 2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Chla.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+#####################################################################################################
+##map with stations color coded by Beam Transmission
+ls_poly <- readOGR(dsn = here('Data',"shapefiles/LakeSuperior"), layer = "lake_superior")
+ls_poly <- spTransform(ls_poly, CRS("+proj=longlat"))
+ls_poly.fort <- fortify(ls_poly)
+
+##my_breaks = c(1, 10, 100, 1000, 10000)
+
+ggplot(data, aes(Mid.Long.DD, Mid.Lat.DD)) +
+  theme_bw() +
+  scale_y_continuous()+
+  scale_x_continuous(breaks=c(-93,-92,-91,-90,-89,-88,-87,-86,-85,-84), 
+                     labels=c('-93','-92','-91','-90','-89','-88','-87','-86','-85','-84'))+
+  geom_path(data = ls_poly.fort, aes(long, lat, group = group), size = 0.5)+
+  geom_point(data=data, mapping=aes(Mid.Long.DD, Mid.Lat.DD, color=SEABIRD_BEAM), size=4, stroke=1.5)+
+  scale_color_gradient(low='cadetblue2', high='red', name='Light beam\ntransmission, %')+
+  map_theme+
+  ##geom_text(aes(label=Station))+
+  labs( x='Longitude', y='Latitude',
+        title='Lake Superior Surface Water Transparency',
+        subtitle='Collections made May-July 2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Beam.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+
+#####################################################################################################
 ##Fish density as a function of distance from shore
 ###ALL YEARS
 
@@ -282,7 +335,8 @@ ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Density_Distance.png'), dpi =
 
 ggplot(data, aes(x=jday, y=log(fish_ha))) +
   geom_point(size=4, stroke=1.5)+
-  geom_smooth(size=2, stroke=1.5)+
+  geom_smooth(method=lm, size=1, stroke=1.5) +
+  stat_cor(label.x = 180, label.y = 8)+ 
   scale_y_continuous()+
   scale_x_continuous()+
   plot_theme +
@@ -377,3 +431,75 @@ ggplot(towdata, aes(x=SEABIRD_TEMP, y=log(fish_ha))) +
         caption=ann_data_access)
 
 ggsave(here('Plots and Tables/LS_CiscoeLarvae_Density_Beam.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+
+#####################################################################################################
+##Fish density as a function of bathymetric depth
+###ALL YEARS
+
+my_breaks = c(1, 100, 1000, 25000, 75000)
+
+ggplot(towdata, aes(x=(BEG_DEPTH+END_DEPTH)/2, y=log(fish_ha))) +
+  geom_point(data=towdata, mapping=aes(x=(BEG_DEPTH+END_DEPTH)/2, y=log(fish_ha), color=YEAR), size=4, stroke=1.5)+
+  geom_smooth(data=towdata, mapping=aes(x=(BEG_DEPTH+END_DEPTH)/2, y=log(fish_ha), color=YEAR), size=1, stroke=1.5) +
+  scale_color_gradient(low='cadetblue2', high='red', name='Year')+
+  scale_y_continuous()+
+  scale_x_continuous()+
+  plot_theme +
+  theme(legend.position=c(0.8, 0.8)) + 
+  labs( x='Bathymetric depth (m)', y='Log(Fish per hectare)',
+        title='Lake Superior Larval Ciscoe in Relation to Bathymetric Depth',
+        subtitle='Collections made May-July for the years 2014-2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/LS_CiscoeLarvae_Density_Depth.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+#####################################################################################################
+##Fish density as a function of bathymetric depth
+###2019
+
+my_breaks = c(1, 100, 1000, 25000, 75000)
+
+ggplot(data, aes(x=(BEG_DEPTH+END_DEPTH)/2, y=log(fish_ha))) +
+  geom_point(size=4, stroke=1.5)+
+  ##geom_smooth(size=1, stroke=1.5) +
+  geom_smooth(method=lm, size=1, stroke=1.5) +
+  stat_cor(label.x = 250, label.y = 8)+ 
+  scale_y_continuous()+
+  scale_x_continuous()+  
+  plot_theme +
+  theme(legend.position=c(0.8, 0.8)) + 
+  labs( x='Bathymetric depth (m)', y='Log(Fish per hectare)',
+        title='Lake Superior Larval Ciscoe in Relation to Bathymetric Depth',
+        subtitle='Collections made May-July 2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Density_Depth.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
+
+#####################################################################################################
+##Ternary plot of larvarl Fish density
+###2019
+my_breaks = c(1, 100, 1000, 25000, 75000)
+
+ggtern(data=data, aes(x=DIST_SHORE_M/1000, y=(BEG_DEPTH + END_DEPTH)/2, z=SEABIRD_TEMP)) +
+  geom_point(aes(color=fish_ha),size=4, stroke=1.5) +
+ #   stat_density_tern(geom = 'polygon', aes(fill = ..level.., alpha = ..level..)) +
+  guides(alpha='none') +
+  geom_density_tern() +
+  tern_limits(T=.3,L=0.5,R=.2) + 
+  theme_zoom_T(0.6) +
+  scale_color_gradient(low='cadetblue2', high='red', name='Fish per ha', trans = "log", breaks = my_breaks, labels=my_breaks)  +
+  labs(x="Distance from Shore", y="Bathymetric Depth",z="Temperature",
+       title='Lake Superior Larval Ciscoe',
+       subtitle='Collections made May-July 2019',
+       caption=ann_data_access) +
+  theme_bw()  +
+  plot_theme +
+  theme_showarrows() + 
+  theme(legend.position      = c(0, 1),
+        legend.justification = c(0, 1),
+        legend.box.just      = 'left') 
+
+ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Density_Ternary.png'), dpi = 300, width = 30, height = 16, units = "cm")
+
