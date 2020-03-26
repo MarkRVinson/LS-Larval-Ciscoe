@@ -43,22 +43,30 @@ raw.data[is.na(raw.data[,"BEG_LONGITUDE_DD"]), "BEG_LONGITUDE_DD"] <- raw.data[i
 raw.data$Mid.Lat.DD<-(raw.data$BEG_LATITUDE_DD+raw.data$END_LATITUDE_DD)/2
 raw.data$Mid.Long.DD<-(raw.data$BEG_LONGITUDE_DD+raw.data$END_LONGITUDE_DD)/2
 
+###ADD TARGET, NEARSHORE - OFFSHORE
+raw.data<-mutate(raw.data, TARGET = ifelse(LOCATION <500, "nearshore", "offshore"))
+
+
 
 ####################################################################################################################NEARSHORE DATA####
-##Compoisite the two nets into one sample
+##Composite the two nets into one sample
 ##Subset data frame to SPECIES = 217, UNIDENTIFIED Coregonus or SPECIES = 0 for no fish tows
  towdata <- raw.data %>% 
   subset(SPECIES==217 | SPECIES ==0) %>%
 
 ##Composite the two nets into one sample
-  group_by(OP_DATE, TIME, YEAR,	LOCATION,	Mid.Lat.DD, Mid.Long.DD, DIST_SHORE_M, BEG_DEPTH,
+  group_by(OP_DATE, TIME, YEAR,	LOCATION,	TARGET, Mid.Lat.DD, Mid.Long.DD, DIST_SHORE_M, BEG_DEPTH,
           END_DEPTH, SEABIRD_TEMP, SEABIRD_CHL, SEABIRD_BEAM, TOW_TIME, DISTANCE, SPECIES) %>%
   summarise_at(vars(FISH), sum) %>%
     ungroup() %>%
 
-##Calculate fish density - number per hectare based on tow distance
-mutate(fish_ha = FISH/(((1609.34*DISTANCE)*2)*0.000001)/100) %>%
-
+##Calculate fish density - number per hectare 
+  ## Sampling area in square feet = DISTANCE (in miles) * 5280 (feet per mile) * 6.56168 (Net Width in feet, two 1 m wide nets)
+  ## Sampling area in hectares = area in square ft / 107639
+  ## Divide the fish count by the sampling area in hectares = number of fish per hectare
+  
+  mutate(fish_ha = FISH/(((DISTANCE*5280)*6.56168)/107639.1))  %>%
+ 
 ##Add Field for Julian Day
 mutate(jday = yday(OP_DATE))  
 
@@ -142,7 +150,7 @@ data <- towdata %>%
 
 
 ####################################################################################################################NEARSHORE DATA####
-##sample site map########################################################################################################MAP##########
+##sample site map, showing nearshore and offshore sites ######
 ##NOTE: need to have the shapefiles folder in your working directory for these to work
 
 ls_poly <- readOGR(dsn = here('Data',"shapefiles/LakeSuperior"), layer = "lake_superior")
@@ -155,16 +163,37 @@ ggplot(data, aes(Mid.Long.DD, Mid.Lat.DD)) +
   scale_x_continuous(name='Longitude',breaks=c(-93,-92,-91,-90,-89,-88,-87,-86,-85,-84), 
                      labels=c('-93','-92','-91','-90','-89','-88','-87','-86','-85','-84'))+
   geom_path(data = ls_poly.fort, aes(long, lat, group = group), size = 0.5)+
-  geom_point(data=data, mapping=aes(Mid.Long.DD, Mid.Lat.DD), size=4, stroke=1.5)+
-##  scale_color_manual(values=c('salmon','cadetblue2'), name='Survey', labels=c('Nearshore','Offshore'))+
+  geom_point(data=data, mapping=aes(Mid.Long.DD, Mid.Lat.DD, fill=TARGET), size=5, shape=21, stroke=1.5)+
+  scale_fill_manual(values=c('black','grey'), name='Survey', labels=c('Nearshore','Offshore'))+
   map_theme+
-##  geom_text(aes(label=Site))+
+##  geom_text(aes(label=LOCATION))+
+  labs(caption=ann_data_access,
+       title='Lake Superior Larval Cisco Sampling Stations',
+       subtitle='Collections made May-July 2019')
+
+ggsave (here('Plots and Tables/2019_LS_CiscoeLarvae_Sites_by_Survey.png'), dpi = 300, width = 40, height = 20, units = "cm")
+
+##sample site map, all sites shown the same#################################################################MAP##########
+##NOTE: need to have the shapefiles folder in your working directory for these to work
+
+ls_poly <- readOGR(dsn = here('Data',"shapefiles/LakeSuperior"), layer = "lake_superior")
+ls_poly <- spTransform(ls_poly, CRS("+proj=longlat"))
+ls_poly.fort <- fortify(ls_poly)
+
+ggplot(data, aes(Mid.Long.DD, Mid.Lat.DD)) +
+  theme_bw() +
+  scale_y_continuous(name='Latitude')+
+  scale_x_continuous(name='Longitude',breaks=c(-93,-92,-91,-90,-89,-88,-87,-86,-85,-84), 
+                     labels=c('-93','-92','-91','-90','-89','-88','-87','-86','-85','-84'))+
+  geom_path(data = ls_poly.fort, aes(long, lat, group = group), size = 0.5)+
+  geom_point(data=data, mapping=aes(Mid.Long.DD, Mid.Lat.DD), size=6, stroke=1.5)+
+  map_theme+
+  ##  geom_text(aes(label=Site))+
   labs(caption=ann_data_access,
        title='Lake Superior Larval Cisco Sampling Stations',
        subtitle='Collections made May-July 2019')
 
 ggsave (here('Plots and Tables/2019_LS_CiscoeLarvae_Sites.png'), dpi = 300, width = 40, height = 20, units = "cm")
-
 
 ####################################################################################################################NEARSHORE DATA####
 ##sample site map, colored by sampling day##########
@@ -268,6 +297,30 @@ ggplot(data, aes(Mid.Long.DD, Mid.Lat.DD)) +
 
 ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Beam.png'), dpi = 300, width = 30, height = 16, units = "cm")
 
+#####################################################################################################
+##map with stations color coded by Beam Transmission
+ls_poly <- readOGR(dsn = here('Data',"shapefiles/LakeSuperior"), layer = "lake_superior")
+ls_poly <- spTransform(ls_poly, CRS("+proj=longlat"))
+ls_poly.fort <- fortify(ls_poly)
+
+##my_breaks = c(1, 10, 100, 1000, 10000)
+
+ggplot(data, aes(Mid.Long.DD, Mid.Lat.DD)) +
+  theme_bw() +
+  scale_y_continuous()+
+  scale_x_continuous(breaks=c(-93,-92,-91,-90,-89,-88,-87,-86,-85,-84), 
+                     labels=c('-93','-92','-91','-90','-89','-88','-87','-86','-85','-84'))+
+  geom_path(data = ls_poly.fort, aes(long, lat, group = group), size = 0.5)+
+  geom_point(data=data, mapping=aes(Mid.Long.DD, Mid.Lat.DD, color=SEABIRD_TEMP), size=4, stroke=1.5)+
+  scale_color_gradient(low='cadetblue2', high='red', name='Temperature')+
+  map_theme+
+  ##geom_text(aes(label=Station))+
+  labs( x='Longitude', y='Latitude',
+        title='Lake Superior Surface Water Temperature',
+        subtitle='Collections made May-July 2019',
+        caption=ann_data_access)
+
+ggsave(here('Plots and Tables/2019_LS_CiscoeLarvae_Temp.png'), dpi = 300, width = 30, height = 16, units = "cm")
 
 #####################################################################################################
 ##Fish density as a function of distance from shore
