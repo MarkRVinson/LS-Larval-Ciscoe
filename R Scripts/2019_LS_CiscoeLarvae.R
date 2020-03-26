@@ -130,15 +130,15 @@ ggplot(towdata, aes(Mid.Long.DD, Mid.Lat.DD)) +
         title='Lake Superior Larval Ciscoe Density',
         subtitle='Collections made May-July for the years 2014-2019',
         caption=ann_data_access) +
-  theme(legend.position=c(0.18,-0.15), 
+  theme(legend.position=c(0.18,-0.13), 
         legend.direction="horizontal",
         legend.text=element_text(size=10, family='serif'), 
-        legend.title=element_text(size=16, family='serif'),
+        legend.title=element_text(size=14, family='serif'),
         axis.title=element_text(size=16, family='serif'),
         axis.text=element_text(size=16, family='serif')) +
     facet_wrap(~YEAR) 
 
-ggsave(here('Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png'), dpi = 300, width = 30, height = 16, units = "cm")
+ggsave(here('Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png'), dpi = 300, width = 35, height = 16, units = "cm")
 
 
 ####################################################################################################################NEARSHORE DATA####
