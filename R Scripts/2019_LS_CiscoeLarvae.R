@@ -52,8 +52,9 @@ raw.data<-mutate(raw.data, TARGET = ifelse(LOCATION <500, "nearshore", "offshore
 ##Composite the two nets into one sample
 ##Subset data frame to SPECIES = 217, UNIDENTIFIED Coregonus or SPECIES = 0 for no fish tows
  towdata <- raw.data %>% 
+  subset(SPECIES==217) %>%
   subset(SPECIES==217 | SPECIES ==0) %>%
-
+  
 ##Composite the two nets into one sample
   group_by(OP_DATE, TIME, YEAR,	LOCATION,	TARGET, Mid.Lat.DD, Mid.Long.DD, DIST_SHORE_M, BEG_DEPTH,
           END_DEPTH, SEABIRD_TEMP, SEABIRD_CHL, SEABIRD_BEAM, TOW_TIME, DISTANCE, SPECIES) %>%
@@ -75,7 +76,14 @@ mutate(jday = yday(OP_DATE))
 codes.to.names<-read_xlsx(here('Data','Species_Taxonomy.xlsx'))
 sci.names<-select(codes.to.names, c(2:4))
 
+###########################################################################################################
+##subset data to whatever you want to analyze##############################################################
+##NOTE: need to have the shapefiles folder in your working directory for these to work
+data <- towdata %>%
+  subset(YEAR==2019)
 
+
+###########################################################################################################
 ##set default themes for all plots and maps
 map_theme<-theme(axis.text=element_text(size=20, family='serif'), 
                  axis.title=element_text(size=20, family='serif'), 
@@ -139,13 +147,6 @@ ggplot(towdata, aes(Mid.Long.DD, Mid.Lat.DD)) +
     facet_wrap(~YEAR) 
 
 ggsave(here('Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png'), dpi = 300, width = 35, height = 16, units = "cm")
-
-
-####################################################################################################################NEARSHORE DATA####
-##subset data to whatever you want to analyze########################################################################################################MAP##########
-##NOTE: need to have the shapefiles folder in your working directory for these to work
-data <- towdata %>%
- subset(YEAR==2019)
 
 
 
