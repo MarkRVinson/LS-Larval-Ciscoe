@@ -6,8 +6,8 @@ Species level larval identifications! Yep, it sure is pretty
 <img src="Plots and Tables/2019_LS_CiscoeLarvae_Map_CiscoePies.png?raw=true"/>
 <br>
 <br>
-<img src="Plots and Tables/2019_LS_CiscoeLarvae_Densityy.png?raw=true"/>
+<img src="Plots and Tables/2019_LS_CiscoeLarvae_Density.png?raw=true"/>
 <br>
 <br>
-<img src="Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png?raw=true"/>(Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png) 
+<img src="Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png?raw=true"/>
 <br>
