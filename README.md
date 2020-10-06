@@ -3,5 +3,5 @@ Data, R scripts, plots, tables, and other fabulous things related to Lake Superi
 <br>
 <br>
 <br>
-[<img src="AllYears_LS_CiscoeLarvae_Density.png?raw=true"/>](AllYears_LS_CiscoeLarvae_Density.png) 
+[<img src="Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png?raw=true"/>](Plots and Tables/AllYears_LS_CiscoeLarvae_Density.png) 
 <br>
