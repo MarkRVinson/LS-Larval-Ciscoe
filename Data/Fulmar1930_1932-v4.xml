@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Yu-Chun Kao</origin>
+        <origin>David B. Bunnell</origin>
+        <pubdate>20200518</pubdate>
+        <title>1930-1932 Gill net data from Lake Michigan</title>
+        <geoform>spreadsheet</geoform>
+        <pubinfo>
+          <pubplace>Reston, VA</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9JMLWER</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>U.S. Geological Survey, Great Lakes Science Center</origin>
+            <pubdate>2019</pubdate>
+            <title>Great Lakes Research Vessel Operations 1958-2018. (ver. 3.0, April 2019)</title>
+            <geoform>dataset</geoform>
+            <pubinfo>
+              <pubplace>https://www.sciencebase.gov</pubplace>
+              <publish>U.S. Geological Survey</publish>
+            </pubinfo>
+            <onlink>https://doi.org/10.5066/f75m63x0</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>These data describe the catch and biological data from 363 bottom-set gill-net lifts distributed throughout Lake Michigan (including main basin and Green Bay) between April and November in 1930–1932.  Data collected from the R/V Fulmar were recorded in notebooks and are now archived at the U.S. Geological Survey’s Great Lakes Science Center. Each lift included 1–7 gangs of linen gill nets. Each gang comprised 3–5 panels each having a length of 155 m, a height of 1.5 m, and a (stretch-)mesh size of either 60, 64, 67, 70, or 76 mm. The digitization of the Fulmar data notebooks was started in the late 1990s and finished in this study.</abstract>
+      <purpose>A large cooperative effort was undertaken from 1930 through 1932 by the U.S. Bureau of Fisheries and the states of Michigan and Wisconsin to determine the effect of different gill-net mesh sizes on the catch of deepwater ciscoes, collectively marketed as chubs.  This study was the first to employ a dedicated research vessel (R/V Fulmar) on the Great Lakes, and provided scientific justification for managers to increase the minimum mesh-sizes for the gill-net fishery.  The data can be used to explore the historical distribution of fishes in Lake Michigan.  Users should be aware of biases associated with using bottom-set gill net data, which can underestimate catches of pelagic-oriented species or life stages of species.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>19300401</begdate>
+          <enddate>19321130</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>observed</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-88.0500</westbc>
+        <eastbc>-84.6700</eastbc>
+        <northbc>46.1000</northbc>
+        <southbc>41.6000</southbc>
+      </bounding>
+      <descgeog>Lake Michigan</descgeog>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+      </theme>
+      <theme>
+        <themekt>Marine Realms Information Bank (MRIB) keywords</themekt>
+        <themekey>fish</themekey>
+        <themekey>fisheries biology</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>inland fishery resources</themekey>
+        <themekey>freshwater ecosystems</themekey>
+        <themekey>fishery management</themekey>
+        <themekey>habitats</themekey>
+        <themekey>benthic ecosystems</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>Cisco</themekey>
+        <themekey>Lake Michigan</themekey>
+        <themekey>Gill net</themekey>
+      </theme>
+      <theme>
+        <themekt>Data Categories for Marine Planning</themekt>
+        <themekey>Fishing with Benthic Fixed Gear</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:5e9f635482cefae35a128c38</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>Lake Michigan</placekey>
+      </place>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the dataset's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>David Bunnell</cntper>
+          <cntorg>U.S. Geological Survey, MIDCONTINENT REGION</cntorg>
+        </cntperp>
+        <cntpos>Research Fishery Biologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>1451 Green Rd</address>
+          <city>Ann Arbor</city>
+          <state>MI</state>
+          <postal>48105</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>734-214-9324</cntvoice>
+        <cntfax>734-994-8780</cntfax>
+        <cntemail>dbunnell@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>Environmental Protection Agency, Great Lakes Restoration Initiative for Funding data archival</datacred>
+    <crossref>
+      <citeinfo>
+        <origin>Yu-Chun Kao</origin>
+        <origin>David B. Bunnell</origin>
+        <origin>Randy L. Eshenroder</origin>
+        <origin>Devin N. Murray</origin>
+        <pubdate>20200408</pubdate>
+        <title>Describing historical habitat use of a native fish—Cisco (Coregonus artedi)—in Lake Michigan between 1930 and 1932</title>
+        <geoform>publication</geoform>
+        <serinfo>
+          <sername>PLOS ONE</sername>
+          <issue>vol. 15, issue 4</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>n/a</pubplace>
+          <publish>Public Library of Science (PLoS)</publish>
+        </pubinfo>
+        <othercit>ppg. e0231420</othercit>
+        <onlink>https://doi.org/10.1371/journal.pone.0231420</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>Camille Ward</origin>
+        <origin>Randy L. Eshenroder</origin>
+        <origin>James R. Bence</origin>
+        <pubdate>200001</pubdate>
+        <title>Relative Abundance of Lake Trout and Burbot in the Main Basin of Lake Michigan in the Early 1930s</title>
+        <geoform>publication</geoform>
+        <serinfo>
+          <sername>Transactions of the American Fisheries Society</sername>
+          <issue>vol. 129, issue 1</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace>n/a</pubplace>
+          <publish>Wiley</publish>
+        </pubinfo>
+        <othercit>ppg. 282-295</othercit>
+        <onlink>https://doi.org/10.1577/1548-8659(2000)129&lt;0282:RAOLTA&gt;2.0.CO;2</onlink>
+      </citeinfo>
+    </crossref>
+    <crossref>
+      <citeinfo>
+        <origin>David B. Bunnell</origin>
+        <origin>Randy L. Eshenroder</origin>
+        <origin>Ann E. Krause</origin>
+        <origin>Jean V. Adams</origin>
+        <pubdate>2012</pubdate>
+        <title>Depth segregation of deepwater ciscoes (Coregonus spp.) in Lake Michigan during 1930-1932 and range expansion of Coregonus hoyi into deeper waters after the 1990s</title>
+        <geoform>publication</geoform>
+        <serinfo>
+          <sername>Advances in Limnology</sername>
+          <issue>Vol. 63</issue>
+        </serinfo>
+        <othercit>Biology and Management of Coregonid Fishes -2008;
+pages 3-24
+https://doi.org/10.1127/advlim/63/2012/3</othercit>
+        <onlink>https://doi.org/10.1127/advlim/63/2012/3</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>We assume that Biologists on board the vessel were able to identify Coregonine species with 100% accuracy.  We acknowledge, however, that contemporary identification of Coregonine species using only visual identification can be difficult.</attraccr>
+    </attracc>
+    <logic>Data have been double-checked for digital data entry errors, informed by an analysis for outliers such as plots of length versus weight.  Some questionable data persist, and are noted in Remarks column of Fulmar_fishv2.csv file.</logic>
+    <complete>Data set from the gill net study is considered complete for all Coregonine species (other than lake whitefish), lake trout, and burbot.  We suspect that other species were caught in the gill nets (e.g., white suckers), but they are not reported herein. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Yu-Chun Kao</origin>
+            <origin>David B. Bunnell</origin>
+            <origin>Randy L. Eshenroder</origin>
+            <origin>Devin N. Murray</origin>
+            <pubdate>20200408</pubdate>
+            <title>Describing historical habitat use of a native fish—Cisco (Coregonus artedi)—in Lake Michigan between 1930 and 1932</title>
+            <geoform>publication</geoform>
+            <serinfo>
+              <sername>PLOS ONE</sername>
+              <issue>vol. 15, issue 4</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>Public Library of Science (PLoS)</publish>
+            </pubinfo>
+            <othercit>ppg. e0231420</othercit>
+            <onlink>https://doi.org/10.1371/journal.pone.0231420</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1930</begdate>
+              <enddate>1932</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>observed</srccurr>
+        </srctime>
+        <srccitea>Kao et al. 2020</srccitea>
+        <srccontr>Process Step 2</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Camille Ward</origin>
+            <origin>Randy L. Eshenroder</origin>
+            <origin>James R. Bence</origin>
+            <pubdate>200001</pubdate>
+            <title>Relative Abundance of Lake Trout and Burbot in the Main Basin of Lake Michigan in the Early 1930s</title>
+            <geoform>publication</geoform>
+            <serinfo>
+              <sername>Transactions of the American Fisheries Society</sername>
+              <issue>vol. 129, issue 1</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace>n/a</pubplace>
+              <publish>Wiley</publish>
+            </pubinfo>
+            <othercit>ppg. 282-295</othercit>
+            <onlink>https://doi.org/10.1577/1548-8659(2000)129&lt;0282:RAOLTA&gt;2.0.CO;2</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1930</begdate>
+              <enddate>1932</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>observed</srccurr>
+        </srctime>
+        <srccitea>Ward et al. 2000</srccitea>
+        <srccontr>Process Step 2</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>David B. Bunnell</origin>
+            <origin>Randy L. Eshenroder</origin>
+            <origin>Ann E. Krause</origin>
+            <origin>Jean V. Adams</origin>
+            <pubdate>2012</pubdate>
+            <title>Depth segregation of deepwater ciscoes (Coregonus spp.) in Lake Michigan during 1930-1932 and range expansion of Coregonus hoyi into deeper waters after the 1990s</title>
+            <geoform>publication</geoform>
+            <serinfo>
+              <sername>Advances in Limnology</sername>
+              <issue>Vol. 63</issue>
+            </serinfo>
+            <othercit>Biology and Management of Coregonid Fishes -2008;
+pages 3-24
+https://doi.org/10.1127/advlim/63/2012/3</othercit>
+            <onlink>https://www.schweizerbart.de/papers/adv_limnology/detail/63/77941/Depth_segregation_of_deepwater_ciscoes_Coregonus_spp_in_Lake_Michigan_during_1930_1932_and_range_expansion_of_Coregonus_hoyi_into_deeper_waters_after_the_1990s</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>1930</begdate>
+              <enddate>1932</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>observed</srccurr>
+        </srctime>
+        <srccitea>Bunnell et al. 2012</srccitea>
+        <srccontr>Process Step 2</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>Field Collection: 363 bottom-set gill-net lifts distributed throughout Lake Michigan (including main basin and Green Bay) were set between April and November in 1930–1932. Data collected from the R/V Fulmar were recorded in notebooks and are now archived at the U.S. Geological Survey’s Great Lakes Science Center. Each lift included multiple panels of nets, with up to 7 panels of a given mesh size, each having a length of 155 m, a height of 1.5 m. Mesh sizes (stretch measurement) were 60, 64, 67, 70, or 76 mm.</procdesc>
+        <procdate>1931</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Data archival: The digitization of the archived Fulmar data notebooks was started in the late 1990s by entering data into an Access database.  The lake trout and burbot catch analysis were published in Ward et al. (2000).  The same Access database was analyzed for deepwater cisco species (i.e., all Coregonines except Coregonus artedi and Coregonus clupeaformis) in Bunnell et al. (2012).  Finally, the Access database was downloaded, re-verified using methods described in the "Attribute Accuracy Report" and "Logical Consistency Report" and entered into the RVCAT Oracle database at the Great Lakes Science Center beginning in 2018.  The Coregonus artedi data were then analyzed for Kao et al. (2020)</procdesc>
+        <srcused>Kao et al. 2020</srcused>
+        <srcused>Bunnell et al. 2012</srcused>
+        <srcused>Ward et al. 2000</srcused>
+        <procdate>2000</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Fulmar_OP.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.
+Fulmar operation data</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>OP_ID</attrlabl>
+        <attrdef>Operation ID.  Operation ID number. Artificial sequence number for vessel operation. OP_ID is used as a linking variable between the tables in the RVCAT Database (cited in the Larger Work Citation) and serves as a primary key in RVCAT.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Randomly assigned 6-digit code</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>GN_EFFORT_ID</attrlabl>
+        <attrdef>Gill net effort ID.  Code that connects Fulmar_OP, Fulmar_Catch, and Fulmar_Fish species together.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Randomly assigned 5-digit code</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>OP_DATE</attrlabl>
+        <attrdef>Date the gill net was lifted</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>MM/DD/YYYY</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>MESH_SIZE</attrlabl>
+        <attrdef>Gill net mesh size</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>23</edomv>
+            <edomvd>60 mm mesh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>24</edomv>
+            <edomvd>64 mm mesh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>25</edomv>
+            <edomvd>67 mm mesh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>26</edomv>
+            <edomvd>70 mm mesh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>30</edomv>
+            <edomvd>76 mm mesh</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>BEG_DEPTH</attrlabl>
+        <attrdef>Starting bottom depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>18.3</rdommin>
+            <rdommax>162.8</rdommax>
+            <attrunit>m</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>END_DEPTH</attrlabl>
+        <attrdef>Ending bottom depth</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>18.3</rdommin>
+            <rdommax>184.7</rdommax>
+            <attrunit>m</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LAT</attrlabl>
+        <attrdef>Latitude where the gill net was fished.  Unsure of where along the gill net set location (i.e., which end, or in the middle) the data from archived Captain's log book derives.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>42.1306</rdommin>
+            <rdommax>45.74</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LON</attrlabl>
+        <attrdef>Longitude where the gill net was fished.   Unsure of where along the gill net set location (i.e., which end, or in the middle) the data from archived Captain's log book derives.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-87.7717</rdommin>
+            <rdommax>-85.1167</rdommax>
+            <attrunit>decimal degrees</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>NIGHTS_OUT</attrlabl>
+        <attrdef>Number of nights fished for a given gill net</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>22</rdommax>
+            <attrunit>days</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>N.PANEL</attrlabl>
+        <attrdef>A gill net has is composed of multiple panels, where each panel can vary with respect to mesh size.  This column equals the number of panels in a gill net set, for a specific mesh size.  Some gill nets had only 1 panel of a given mesh size, whereas other gill nets had up to 7 panels of the same mesh size.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>7</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Fulmar_Catch.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.
+Fulmar catch data</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>GN_EFFORT_ID</attrlabl>
+        <attrdef>Gill net effort ID. Code that connects Fulmar_OP, Fulmar_Catch, and Fulmar_Fish species together.  , the combination of columns GN_EFFORT_ID and SPECIES makes each row in this table unique.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Random 5-digit code</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SPECIES</attrlabl>
+        <attrdef>Fish species</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>See SpeciesTable.csv for species definitions</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>N</attrlabl>
+        <attrdef>Number of fish caught.  0 means that no fish were caught, when species = 0 (which also means the no fish were caught in the gill net panel based on the SpeciesTable.csv)</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>0</rdommin>
+            <rdommax>1235</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>WEIGHT</attrlabl>
+        <attrdef>Total weight of catch.  0 means that no fish were caught, when species = 0 (which also means the no fish were caught in the gill net panel based on the SpeciesTable.csv).  An empty cell when N is not equal to 0 means that those captured fish were not weighed.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>Weights were not collected, only count data (N)</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>191189.03</rdommax>
+            <attrunit>g</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>SpeciesTable.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.
+Reference table for the SPECIES column in the Fulmar_Catch and Fulmar_Fish tables.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>Code</attrlabl>
+        <attrdef>Code Name for Species Reference Table</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Reference table definition</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Scientific Name</attrlabl>
+        <attrdef>Scientific Name, or other definition for the code</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Reference Table definition</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Common Name</attrlabl>
+        <attrdef>Common name, or further explanation for pooled species codes</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Reference table definition</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+    <detailed>
+      <enttyp>
+        <enttypl>Fulmar_fishv2.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.  Table containing biometrics of individual fish records</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>GN_EFFORT_ID</attrlabl>
+        <attrdef>Gill net effort ID. Code that connects Fulmar_OP, Fulmar_Catch, and Fulmar_Fish species together.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Random 5-digit code</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SPECIES</attrlabl>
+        <attrdef>Fish species</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>See SpeciesTable.csv for species definitions</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>SEX</attrlabl>
+        <attrdef>Sex</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>Sex unknown</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Male</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Female</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>LENGTH</attrlabl>
+        <attrdef>Total length</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>No length measured, see Remark if applicable</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>114</rdommin>
+            <rdommax>882</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>WEIGHT</attrlabl>
+        <attrdef>Wet weight</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>No weight measured</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>8.5</rdommin>
+            <rdommax>7307.08</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>MATURITY</attrlabl>
+        <attrdef>Maturity</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Immature</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Mature</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>7</edomv>
+            <edomvd>Abnormal</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Mature, ripe</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>6</edomv>
+            <edomvd>Mature, but gonads spent</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>Mature, gravid</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>AGE</attrlabl>
+        <attrdef>Age in years, estimated from a scale structure and recorded on scale envelope</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>No Age Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>8</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>REMARK</attrlabl>
+        <attrdef>Remarks for additional information</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Additional information to denote for some records, including records that seem unusual or suspicious that are not from digital data entry error but could have been errors in original data recording.</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>GS ScienceBase</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/f75m63x0</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20200820</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>David Bunnell</cntper>
+          <cntorg>U.S. Geological Survey, MIDCONTINENT REGION</cntorg>
+        </cntperp>
+        <cntpos>Research Fishery Biologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>1451 Green Rd</address>
+          <city>Ann Arbor</city>
+          <state>MI</state>
+          <postal>48105</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>734-214-9324</cntvoice>
+        <cntfax>734-994-8780</cntfax>
+        <cntemail>dbunnell@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>
