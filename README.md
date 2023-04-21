@@ -8,5 +8,5 @@ Data, R scripts, plots, tables, and other fabulous things related to Lake Superi
 <img src="Plots/2021_2022.GPortage.Locations.png?raw=true"/>
 <br>
 <br>
-<img src="Plots/Genetics.Larval.Length.Yolks.png?raw=true"/>
+<img src="Plots/Genetics.2022.Larval.Length.Yolks.png?raw=true"/>
 <br>
